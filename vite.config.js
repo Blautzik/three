@@ -1,10 +1,8 @@
-module.exports = {
-    pages: {
-      '/otra': {
+export const pages = {
+    '/otra': {
         entry: '/otra.html'
-      },
-      '/otra2': {
-        entry: 'src/otra2.html'
-      }
+    },
+    '/otra2': {
+        entry: '/otra2.html'
     }
-  }
+};
