@@ -33,9 +33,6 @@ pointLight.position.set(1,5,5)
 const ambientLight = new THREE.AmbientLight(0xffffff,1,1)
 
 
-const lightHelper = new THREE.PointLightHelper(pointLight)
-scene.add(lightHelper)
-
 scene.add(pointLight, ambientLight)
 
 
