@@ -3,3 +3,9 @@ canvas{
   top:0;
   left:0;
 }
+
+button{
+  color: azure;
+  position:absolute;
+  z-index: 888888;
+}

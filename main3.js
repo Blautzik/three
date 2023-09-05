@@ -2,7 +2,6 @@ import './style.css';
 import * as THREE from 'three';
 
 const scene = new THREE.Scene();
-
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
 
 const renderer = new THREE.WebGLRenderer({
@@ -18,7 +17,7 @@ const g1 = new THREE.PlaneGeometry(20, 20, 50, 50);
 const m1 = new THREE.MeshBasicMaterial({ color: 0xFF2586, wireframe: true });
 
 const plane = new THREE.Mesh(g1, m1);
-plane.rotation.x = Math.PI / 2 +45;
+plane.rotation.x = Math.PI / 2 + 45;
 scene.add(plane);
 
 // Distort plane
@@ -42,7 +41,10 @@ function animate() {
   for (let i = 0; i < count; i++) {
     const x = originalPositions[i * 3];
     const distanceFromCenterY = Math.abs(x) / 10;
-    const randomOffset = Math.sin((elapsedTime / animationDuration) * Math.PI) * 6; // Adjusted distortion
+    const progress = (elapsedTime / animationDuration) * Math.PI * 2; // Adjust the curvature factor
+
+    // Use a sine function to generate a curved distortion
+    const randomOffset = Math.sin(progress + x * 0.5) * 2; // Adjust the curvature factor
 
     positions[i * 3 + 2] = originalPositions[i * 3 + 2] + randomOffset * distanceFromCenterY;
   }
