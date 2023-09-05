@@ -1,8 +1,8 @@
-const { resolve } = require('path');
-const { defineConfig } = require('vite');
-const legacy = require('@vitejs/plugin-legacy');
+import { resolve } from 'path';
+import { defineConfig } from 'vite';
+import legacy from '@vitejs/plugin-legacy';
 
-module.exports = defineConfig({
+export default defineConfig({
   plugins: [
     legacy({
       targets: ['defaults', 'not IE 11'],
@@ -11,10 +11,15 @@ module.exports = defineConfig({
   build: {
     rollupOptions: {
       input: {
-          main: resolve(__dirname, 'index.html'),
-          otra: resolve(__dirname, '/otra.html'),
-          otra2: resolve(__dirname, '/otra2.html'),
+        about: resolve(__dirname, '/about.html'),
+        main: resolve(__dirname, 'index.html'),
+
+        // aboutjs: resolve(__dirname, 'about.js')
       },
     },
   },
 });
+
+
+
+
