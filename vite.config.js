@@ -11,7 +11,7 @@ export default defineConfig({
   build: {
     rollupOptions: {
       input: {
-        about: resolve(__dirname, '/about.html'),
+        otra: resolve('/otra.html'),
         main: resolve(__dirname, 'index.html'),
 
         // aboutjs: resolve(__dirname, 'about.js')

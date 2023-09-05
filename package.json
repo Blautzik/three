@@ -12,6 +12,7 @@
     "vite": "^4.4.5"
   },
   "dependencies": {
+    "@vitejs/plugin-legacy": "^4.1.1",
     "three": "^0.156.1"
   }
 }
