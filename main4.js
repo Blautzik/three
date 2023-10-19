@@ -26,7 +26,7 @@ const posicionesOriginales = [...posiciones];
 const cantidadVertices = posiciones.length / 3;
 
 let animationStartTime = null;
-const animationDuration = 8000; // 8 seconds
+const animationDuration = 4000; // 2 seconds
 
 function animate() {
   requestAnimationFrame(animate);
@@ -41,13 +41,9 @@ function animate() {
   for (let i = 0; i < cantidadVertices; i++) {
     const x = posicionesOriginales[i * 3];
     const distanciaDeY = Math.abs(x) / 0.5;
-    const progress = (time / animationDuration) * 2 * Math.PI;
+    const progress = (time / animationDuration) * Math.PI * 0.5; 
 
-    const offset = Math.cos(progress + (x + Math.PI) + Math.PI);
-
-    if (x === 0) {
-      offset = 0;
-    }
+    const offset = Math.sin(progress + x ) ; 
 
     posiciones[i * 3 + 2] = posicionesOriginales[i * 3 + 2] + offset * distanciaDeY;
   }
@@ -55,8 +51,6 @@ function animate() {
   plane.geometry.attributes.position.needsUpdate = true;
 
   renderer.render(scene, camera);
-
 }
 
-
-animate()
+animate();

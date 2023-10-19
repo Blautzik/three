@@ -42,7 +42,7 @@ function animate() {
   for (let i = 0; i < count; i++) {
     const x = originalPositions[i * 3];
     const distanceFromCenterY = Math.abs(x) / 10;
-    const randomOffset = Math.sin((elapsedTime / animationDuration) * Math.PI) * 6; // Adjusted distortion
+    const randomOffset = Math.sin((elapsedTime / animationDuration) * Math.PI) * 0.5; // Adjusted distortion
 
     positions[i * 3 + 2] = originalPositions[i * 3 + 2] + randomOffset * distanceFromCenterY;
   }
